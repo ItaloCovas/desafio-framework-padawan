@@ -1,0 +1,226 @@
+// Importações, variáveis e estilos gerais
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+$primaryPurple: #5F3473;
+$secondaryPurple: #3A1F46;
+$lightGray: #EEEEEE;
+$lightOrange: #F29E4F;
+$brightGreen: #69F585;
+
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: $primaryPurple;
+}
+
+body, button {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h3 {
+    text-align: center;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+ .return {   //Botão de retornar a página principal
+        border: none;
+        background: $brightGreen;
+        color: black;
+        border-radius: 8px;
+        padding: 8px 35px;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+
+        margin-top: 30px;
+
+        &:hover {
+            background: #69F560;
+            transform: scale(1.025);
+            transition: .4s ease-in-out;
+        }
+    }
+
+.search-box { //Div de pesquisa que aparece em todas as páginas
+    display: flex;
+    justify-content: center;
+
+    input[type="text"] {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 100px 0 15px;
+
+        width: 30%;
+        padding: 8px;
+    }
+
+}
+
+
+// Página inicial (index)
+
+.title {
+    margin-top: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: 100px;
+
+    background: $secondaryPurple;
+    border: 3px solid white;
+    border-radius: 12px;
+    width: 700px;
+    height: 200px;
+
+    button {
+        border: none;
+        background: $brightGreen;
+        color: black;
+        border-radius: 8px;
+        padding: 8px 35px;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+
+        &:hover {
+            background: #69F560;
+            transform: scale(1.025);
+            transition: .4s ease-in-out;
+        }
+    }
+
+    a + a {
+        margin-left: 20px;
+    }
+}
+
+
+// Página de álbuns 
+.container {
+    table {
+        color: white;
+        background: $secondaryPurple;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 8px;
+
+
+       tr {
+           th {
+               padding: 0px 15px;
+           }
+       }
+    }
+}
+
+// Footer 
+
+footer {
+        margin-top: 250px;
+
+    p {
+        text-align: center;
+        color: white;
+
+        a {
+            color: black;
+        }
+    }
+}
+
+
+
+
+// SESSÃO DE RESPONSIVIDADE
+
+/* Desktops pequenos */
+@media (max-width: 1024px) {}
+
+/* Tablet */
+@media (max-width: 767px) {
+    .container {
+        
+        .options {
+            flex-direction: column;
+            align-items: center;
+            
+
+            width: 500px;
+            height: 500px;
+
+            a + a {
+                margin-left: unset;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    footer {
+        margin-top: 100px;
+    }
+
+    .search-box { //Div de pesquisa que aparece em todas as páginas
+    
+        input[type="text"] {
+            font-size: 12px;
+        }
+    
+    }
+
+    #general-table {
+        width: 500px;
+    }
+}
+
+/* Celular */
+@media (max-width: 530px) {
+    .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        .options {
+            width: 300px;
+            height: 500px;
+        }
+    }
+}
